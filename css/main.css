@@ -71,3 +71,8 @@ img{
 .panel{
  height: 650px;   
 }
+
+/*search form*/
+.searchForm{
+   width: 50px;
+}

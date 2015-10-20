@@ -19,16 +19,16 @@
                     <div class="centered">
                         <h1>Movie Finder</h1>
                         <p>The quest to find you the perfect movie for tonight</p>
-                        <p><a class="btn btn-primary btn-lg" href="#" role="button">Embark on your quest</a></p>
+                        <p><a class="btn btn-primary btn-lg" href="#" id="go" role="button">Embark on your quest</a></p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row-centered searchRow">
+        <div id="step2" class="row-centered searchRow">
             <div class="col-md-6 col-centered">
                 <h3>Begin your movie quest:</h3>
                 <div class="input-group">
-                    <input type="text" data-bind="value: searchTerm" placeholder="Enter your search movie..." class="form-control" aria-label="...">
+                    <input type="text" data-bind="value: searchTerm" placeholder="Enter your search movie..." class="form-control searchForm" aria-label="...">
                     <div class="input-group-btn">
                         <!-- Button and dropdown menu -->
                         <button type="button" data-bind="click: searchForMovies" class="btn btn-primary">Search</button>
@@ -57,7 +57,7 @@
                                 <li class="list-group-item"></li>
                                 <li class="list-group-item"><a data-bind="attr: { href: 'http://www.imdb.com/title/' + imdbID() }">Click here to view IMDB</a></li>
                             </ul>
-                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"  data-target="#myModal">View more Info</button>
+                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"  data-bind="click: $root.viewMoreInfo" data-target="#myModal">View more Info</button>
 
                         </div>
 
@@ -71,29 +71,29 @@
 
 
     <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
         <div class="modal-dialog" role="document">
-            <div class="modal-content">
+            <div class="modal-content" >
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel" data-bind="text: Title"></h4>
+                    <h4 class="modal-title" id="myModalLabel" data-bind="text: currentMovie.Title"></h4>
                 </div>
                 <div class="modal-body">
-                    <img data-bind="attr: { src: Poster}" class="img" alt="Movie Poster image">
-                    <li class="list-group-item">Type: <span data-bind="text: Type"></span></li>
-                    <li class="list-group-item">Year: <span data-bind="text: Year"></span></li>
-                    <li class="list-group-item">Genre: <span data-bind="text: Genre"></span></li>
-                    <li class="list-group-item">Released: <span data-bind="text: Released"></span></li>
-                    <li class="list-group-item">Runtime: <span data-bind="text: Runtime"></span></li>
-                    <li class="list-group-item">Rated: <span data-bind="text: Rated"></span></li>
-                    <li class="list-group-item">IMDB Rating: <span data-bind="text: imdbRating"></span></li>
-                    <li class="list-group-item">IMDB Votes: <span data-bind="text: imdbVotes"></span></li>
-                    <li class="list-group-item">Language: <span data-bind="text: Language"></span></li>
-                    <li class="list-group-item">Country: <span data-bind="text: Country"></span></li>
-                    <li class="list-group-item">Writer: <span data-bind="text: Writer"></span></li>
-                    <li class="list-group-item">Director: <span data-bind="text: Director"></span></li>
-                    <li class="list-group-item">Actors: <span data-bind="text: Actors"></span></li>
-                    <li class="list-group-item">Plot: <span data-bind="text: Plot"></span></li>
+                    <img data-bind="attr: { src: currentMovie.Poster}" class="img" alt="Movie Poster image">
+                    <li class="list-group-item">Type: <span data-bind="text: currentMovie.Type"></span></li>
+                    <li class="list-group-item">Year: <span data-bind="text: currentMovie.Year"></span></li>
+                    <li class="list-group-item">Genre: <span data-bind="text: currentMovie.Genre"></span></li>
+                    <li class="list-group-item">Released: <span data-bind="text: currentMovie.Released"></span></li>
+                    <li class="list-group-item">Runtime: <span data-bind="text: currentMovie.Runtime"></span></li>
+                    <li class="list-group-item">Rated: <span data-bind="text: currentMovie.Rated"></span></li>
+                    <li class="list-group-item">IMDB Rating: <span data-bind="text: currentMovie.imdbRating"></span></li>
+                    <li class="list-group-item">IMDB Votes: <span data-bind="text: currentMovie.imdbVotes"></span></li>
+                    <li class="list-group-item">Language: <span data-bind="text: currentMovie.Language"></span></li>
+                    <li class="list-group-item">Country: <span data-bind="text: currentMovie.Country"></span></li>
+                    <li class="list-group-item">Writer: <span data-bind="text: currentMovie.Writer"></span></li>
+                    <li class="list-group-item">Director: <span data-bind="text: currentMovie.Director"></span></li>
+                    <li class="list-group-item">Actors: <span data-bind="text: currentMovie.Actors"></span></li>
+                    <li class="list-group-item">Plot: <span data-bind="text: currentMovie.Plot"></span></li>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-bind="click: viewMoreInfo" data-dismiss="modal">Close</button>
