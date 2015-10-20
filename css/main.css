@@ -1,0 +1,34 @@
+/* centered columns styles */
+
+.row-centered {
+    text-align: center;
+}
+
+.col-centered {
+    display: inline-block;
+    float: none;
+    /* reset the text-align */
+    text-align: left;
+    /* inline-block space fix */
+    margin-right: -4px;
+}
+
+.centered {
+    text-align: center;
+    display: inline-block;
+    float: none;
+    margin: 0 auto;
+}
+
+.searchRow {
+    padding-bottom: 50px;  
+}
+
+.alignLeft{
+    margin-right: 70%;
+}
+
+.results{
+    color: green;
+    font-weight: bold;
+}

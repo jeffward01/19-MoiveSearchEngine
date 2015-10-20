@@ -1,11 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title> </title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="bower_components/animate.css/animate.min.css" />
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
 </head>
+
 <body>
-    
+    <div class="mainContainer">
+        <div class="row row-centered">
+            <div class="col-md-12 col-lg-12">
+                <div class="jumbotron">
+                    <div class="centered">
+                        <h1>Movie Finder</h1>
+                        <p>The quest to find you the perfect movie for tonight</p>
+                        <p><a class="btn btn-primary btn-lg" href="#" role="button">Embark on your quest</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row-centered searchRow">
+            <div class="col-md-6 col-centered">
+                <h3>Begin your movie quest:</h3>
+                <div class="input-group">
+                    <input type="text" placeholder="Enter your search movie..." class="form-control" aria-label="...">
+                    <div class="input-group-btn">
+                        <!-- Button and dropdown menu -->
+                        <button type="button" class="btn btn-primary">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row row-centered">
+
+            <h3 class="alignLeft results">Results:</h3>        
+                <div class="col-md-4 col-centered">
+                   <div class="well well-lg">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title" data-bind="text: Title"></h3>
+                        </div>
+                        <div class="panel-body">
+                            <img data-bind="attr: { src: Poster}" src="" class="img-responsive" alt="Movie Poster image">
+                            <ul class="list-group">
+                                <li class="list-group-item">Type: <span data-bind="text: Type"></span></li>
+                                <li class="list-group-item">Year: <span data-bind="text: Year"></span></li>
+                                <li class="list-group-item">IMDB ID: <span data-bind="text: imdbID"></span></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/knockout/dist/knockout.js"></script>
+    <script src="bower_components/knockout-mapping/knockout.mapping.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/pageFlow.js"></script>
 </body>
 
 </html>
