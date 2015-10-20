@@ -28,10 +28,11 @@
             <div class="col-md-6 col-centered">
                 <h3>Begin your movie quest:</h3>
                 <div class="input-group">
-                    <input type="text" data-bind="value: searchTerm" placeholder="Enter your search movie..." width="50px" class="form-control searchForm" aria-label="...">
+                    <input type="text" data-bind="value: searchTerm" placeholder="Enter your search movie..." width="50%" class="form-control searchForm" aria-label="...">
                     <div class="input-group-btn">
                         <!-- Button and dropdown menu -->
                         <button type="button" data-bind="click: searchForMovies" class="btn btn-primary">Search</button>
+                        <button type="button" data-bind="click: clear" class="btn btn-danger">Clear</button>
                     </div>
                 </div>
             </div>
@@ -41,7 +42,7 @@
             <h3 data-bind="text: errorMessage"></h3></div>
 
 
-        <div class="row" data-bind="visible: movies().length > 0, foreach: movies">
+        <div class="row results" data-bind="visible: movies().length > 0, foreach: movies">
             <div class="col-sm-6 col-md-4">
                 <div class="panel panel-primary">
                     <div class="panel-heading">

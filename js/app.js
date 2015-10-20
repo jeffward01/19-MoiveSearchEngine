@@ -26,6 +26,11 @@ function MyViewModel() {
     self.errorMessage = ko.observable();
 
     self.searchForMovies = function () {
+         if($(".searchForm").val() == ""){
+             alert("Plese Enter a search movie!")
+             return;
+         }
+        
         $.getJSON("http://omdbapi.com/?s=" + self.searchTerm(), {
             api_key: '7a5035cca9022ea67734112eb921d5d33680a63d'
         }).done(function (data) {
@@ -56,6 +61,10 @@ function MyViewModel() {
             }
         });
     };
+    self.clear = function(){
+        $(".results").hide();
+        $(".searchForm").val("");
+    }
 };
 
 
