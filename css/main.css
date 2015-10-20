@@ -45,3 +45,9 @@
     padding-top: 20px;
     padding-bottom: 20px;
 }
+
+.mainContainer{
+    width: 85%;
+    margin: 0 auto;
+    
+}
