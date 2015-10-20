@@ -28,34 +28,32 @@
             <div class="col-md-6 col-centered">
                 <h3>Begin your movie quest:</h3>
                 <div class="input-group">
-                    <input type="text" placeholder="Enter your search movie..." class="form-control" aria-label="...">
+                    <input type="text" data-bind="value: searchTerm" placeholder="Enter your search movie..." class="form-control" aria-label="...">
                     <div class="input-group-btn">
                         <!-- Button and dropdown menu -->
-                        <button type="button" class="btn btn-primary">Search</button>
+                        <button type="button" data-bind="click: searchForMovies"class="btn btn-primary">Search</button>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row row-centered">
+        </div>        
+        
+        <div class="row" data-bind="visible: movies().length > 0, foreach: movies">
+            <div class="col-sm-6 col-md-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" data-bind="text: Title"></h3>
+                    </div>
+                    <div class="panel-body">
+                        <img data-bind="attr: { src: Poster}" class="img-responsive" alt="Movie Poster image">
+                        <ul class="list-group">
+                            <li class="list-group-item">Type: <span data-bind="text: Type"></span></li>
+                            <li class="list-group-item">Year: <span data-bind="text: Year"></span></li>
+                            <li class="list-group-item"><a data-bind="attr: { href: 'http://www.imdb.com/title/' + imdbID() }">Click here to view IMDB</a></li>
+                        </ul>
 
-            <h3 class="alignLeft results">Results:</h3>        
-                <div class="col-md-4 col-centered">
-                   <div class="well well-lg">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <h3 class="panel-title" data-bind="text: Title"></h3>
-                        </div>
-                        <div class="panel-body">
-                            <img data-bind="attr: { src: Poster}" src="" class="img-responsive" alt="Movie Poster image">
-                            <ul class="list-group">
-                                <li class="list-group-item">Type: <span data-bind="text: Type"></span></li>
-                                <li class="list-group-item">Year: <span data-bind="text: Year"></span></li>
-                                <li class="list-group-item">IMDB ID: <span data-bind="text: imdbID"></span></li>
-                            </ul>
-
-                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>

@@ -21,14 +21,27 @@
 }
 
 .searchRow {
-    padding-bottom: 50px;  
+    padding-bottom: 50px;
 }
 
-.alignLeft{
+.alignLeft {
     margin-right: 70%;
 }
 
-.results{
+.results {
     color: green;
     font-weight: bold;
+}
+
+.noneFound {
+    color: black;
+    font-weight: bold;
+}
+.resultContainer{
+    width: 80%;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.3);
+    border-radius: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
