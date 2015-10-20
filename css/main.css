@@ -59,9 +59,15 @@
 img{
     max-height: 300px;
     max-width: 300px;
-    margin: 0 auto;
+    
+    margin: auto auto;
+    padding-bottom: 30px;
 }
 .center{
     margin: 0 auto;
     text-align: center;
+}
+
+.panel{
+ height: 650px;   
 }
