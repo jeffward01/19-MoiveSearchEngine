@@ -8,8 +8,10 @@ $(document).ready(function(){
         $("#step2").slideToggle(500);
     });//End Click
     
-    
+  
     
     
     
 });//End Ready
+
+  

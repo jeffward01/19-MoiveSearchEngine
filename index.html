@@ -77,10 +77,13 @@
             <div class="modal-content" >
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <div class="center">
                     <h4 class="modal-title" id="myModalLabel" data-bind="text: currentMovie.Title"></h4>
                 </div>
                 <div class="modal-body">
+                   <div class="center">
                     <img data-bind="attr: { src: currentMovie.Poster}" class="img" alt="Movie Poster image">
+                    </div>
                     <li class="list-group-item"><strong class="emp">Type:</strong> <span data-bind="text: currentMovie.Type"></span></li>
                     <li class="list-group-item"><strong class="emp">Year:</strong> <span data-bind="text: currentMovie.Year"></span></li>
                     <li class="list-group-item"><strong class="emp">Genre:</strong> <span data-bind="text: currentMovie.Genre"></span></li>
@@ -95,6 +98,7 @@
                     <li class="list-group-item"><strong class="emp">Director:</strong> <span data-bind="text: currentMovie.Director"></span></li>
                     <li class="list-group-item"><strong class="emp">Actors: </strong><span data-bind="text: currentMovie.Actors"></span></li>
                     <li class="list-group-item"><strong class="emp">Plot:</strong> <span data-bind="text: currentMovie.Plot"></span></li>
+                </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-bind="click: viewMoreInfo" data-dismiss="modal">Close</button>

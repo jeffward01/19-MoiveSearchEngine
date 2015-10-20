@@ -19,7 +19,9 @@ function MyViewModel() {
         Writer: ko.observable(),
         Director: ko.observable(),
         Country: ko.observable(),
-        Language: ko.observable()
+        Language: ko.observable(),
+        Title: ko.observable()
+        
     };
 
     self.error = ko.observable(false);
