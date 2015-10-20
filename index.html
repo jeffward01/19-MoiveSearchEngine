@@ -48,45 +48,59 @@
                         <h3 class="panel-title" data-bind="text: Title"></h3>
                     </div>
                     <div class="panel-body maxHeight">
-                        <div class="center">  
-                            <img data-bind="attr: { src: Poster}"  class="img" alt="Movie Poster image">
-                             
+                        <div class="center">
+                            <img data-bind="attr: { src: Poster}" class="img" alt="Movie Poster image">
+
                             <ul class="list-group">
                                 <li class="list-group-item">Type: <span data-bind="text: Type"></span></li>
                                 <li class="list-group-item">Year: <span data-bind="text: Year"></span></li>
+                                <li class="list-group-item"></li>
                                 <li class="list-group-item"><a data-bind="attr: { href: 'http://www.imdb.com/title/' + imdbID() }">Click here to view IMDB</a></li>
-                                 </ul>
-                                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">View more Info</button>
-                           
-                            </div>
-                     
+                            </ul>
+                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"  data-target="#myModal">View more Info</button>
+
+                        </div>
+
                     </div>
                 </div>
 
             </div>
         </div>
     </div>
-    
-    
-    
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel" data-bind="text: Title"></h4>
+                </div>
+                <div class="modal-body">
+                    <img data-bind="attr: { src: Poster}" class="img" alt="Movie Poster image">
+                    <li class="list-group-item">Type: <span data-bind="text: Type"></span></li>
+                    <li class="list-group-item">Year: <span data-bind="text: Year"></span></li>
+                    <li class="list-group-item">Genre: <span data-bind="text: Genre"></span></li>
+                    <li class="list-group-item">Released: <span data-bind="text: Released"></span></li>
+                    <li class="list-group-item">Runtime: <span data-bind="text: Runtime"></span></li>
+                    <li class="list-group-item">Rated: <span data-bind="text: Rated"></span></li>
+                    <li class="list-group-item">IMDB Rating: <span data-bind="text: imdbRating"></span></li>
+                    <li class="list-group-item">IMDB Votes: <span data-bind="text: imdbVotes"></span></li>
+                    <li class="list-group-item">Language: <span data-bind="text: Language"></span></li>
+                    <li class="list-group-item">Country: <span data-bind="text: Country"></span></li>
+                    <li class="list-group-item">Writer: <span data-bind="text: Writer"></span></li>
+                    <li class="list-group-item">Director: <span data-bind="text: Director"></span></li>
+                    <li class="list-group-item">Actors: <span data-bind="text: Actors"></span></li>
+                    <li class="list-group-item">Plot: <span data-bind="text: Plot"></span></li>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bind="click: viewMoreInfo" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
 
 
