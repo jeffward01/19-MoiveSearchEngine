@@ -79,3 +79,13 @@ img{
 .emp{
     color: darkcyan;
 }
+
+
+
+/*jumbotron*/
+.jumbotron{
+height: 300px;    
+}
+.mainHeading{
+ display:none;   
+}

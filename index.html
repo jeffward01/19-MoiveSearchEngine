@@ -13,13 +13,15 @@
 
 <body>
     <div class="mainContainer">
-        <div class="row row-centered">
-            <div class="col-md-12 col-lg-12">
-                <div class="jumbotron">
-                    <div class="centered">
-                        <h1>Movie Finder</h1>
-                        <p>The quest to find you the perfect movie for tonight</p>
-                        <p><a class="btn btn-primary btn-lg" href="#" id="go" role="button">Embark on your quest</a></p>
+        <div class="mainHeading">
+            <div class="row row-centered">
+                <div class="col-md-12 col-lg-12">
+                    <div class="jumbotron">
+                        <div class="centered">
+                            <h1>Movie Finder</h1>
+                            <p>The quest to find you the perfect movie for tonight</p>
+                            <p><a class="btn btn-primary btn-lg" href="#" id="go" role="button">Embark on your quest</a></p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -55,10 +57,9 @@
                             <ul class="list-group">
                                 <li class="list-group-item">Type: <span data-bind="text: Type"></span></li>
                                 <li class="list-group-item">Year: <span data-bind="text: Year"></span></li>
-                                <li class="list-group-item"></li>
                                 <li class="list-group-item"><a data-bind="attr: { href: 'http://www.imdb.com/title/' + imdbID() }">Click here to view IMDB</a></li>
                             </ul>
-                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"  data-bind="click: $root.viewMoreInfo" data-target="#myModal">View more Info</button>
+                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-bind="click: $root.viewMoreInfo" data-target="#myModal">View more Info</button>
 
                         </div>
 
@@ -72,33 +73,33 @@
 
 
     <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
-            <div class="modal-content" >
+            <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <div class="center">
-                    <h4 class="modal-title" id="myModalLabel" data-bind="text: currentMovie.Title"></h4>
-                </div>
-                <div class="modal-body">
-                   <div class="center">
-                    <img data-bind="attr: { src: currentMovie.Poster}" class="img" alt="Movie Poster image">
+                        <h4 class="modal-title" id="myModalLabel" data-bind="text: currentMovie.Title"></h4>
                     </div>
-                    <li class="list-group-item"><strong class="emp">Type:</strong> <span data-bind="text: currentMovie.Type"></span></li>
-                    <li class="list-group-item"><strong class="emp">Year:</strong> <span data-bind="text: currentMovie.Year"></span></li>
-                    <li class="list-group-item"><strong class="emp">Genre:</strong> <span data-bind="text: currentMovie.Genre"></span></li>
-                    <li class="list-group-item"><strong class="emp">Released:</strong> <span data-bind="text: currentMovie.Released"></span></li>
-                    <li class="list-group-item"><strong class="emp">Runtime:</strong> <span data-bind="text: currentMovie.Runtime"></span></li>
-                    <li class="list-group-item"><strong class="emp">Rated: </strong><span data-bind="text: currentMovie.Rated"></span></li>
-                    <li class="list-group-item"><strong class="emp">IMDB Rating:</strong> <span data-bind="text: currentMovie.imdbRating"></span></li>
-                    <li class="list-group-item"><strong class="emp">IMDB Votes:</strong> <span data-bind="text: currentMovie.imdbVotes"></span></li>
-                    <li class="list-group-item"><strong class="emp">Language:</strong> <span data-bind="text: currentMovie.Language"></span></li>
-                    <li class="list-group-item"><strong class="emp">Country:</strong> <span data-bind="text: currentMovie.Country"></span></li>
-                    <li class="list-group-item"><strong class="emp">Writer:</strong> <span data-bind="text: currentMovie.Writer"></span></li>
-                    <li class="list-group-item"><strong class="emp">Director:</strong> <span data-bind="text: currentMovie.Director"></span></li>
-                    <li class="list-group-item"><strong class="emp">Actors: </strong><span data-bind="text: currentMovie.Actors"></span></li>
-                    <li class="list-group-item"><strong class="emp">Plot:</strong> <span data-bind="text: currentMovie.Plot"></span></li>
-                </div>
+                    <div class="modal-body">
+                        <div class="center">
+                            <img data-bind="attr: { src: currentMovie.Poster}" class="img" alt="Movie Poster image">
+                        </div>
+                        <li class="list-group-item"><strong class="emp">Type:</strong> <span data-bind="text: currentMovie.Type"></span></li>
+                        <li class="list-group-item"><strong class="emp">Year:</strong> <span data-bind="text: currentMovie.Year"></span></li>
+                        <li class="list-group-item"><strong class="emp">Genre:</strong> <span data-bind="text: currentMovie.Genre"></span></li>
+                        <li class="list-group-item"><strong class="emp">Released:</strong> <span data-bind="text: currentMovie.Released"></span></li>
+                        <li class="list-group-item"><strong class="emp">Runtime:</strong> <span data-bind="text: currentMovie.Runtime"></span></li>
+                        <li class="list-group-item"><strong class="emp">Rated: </strong><span data-bind="text: currentMovie.Rated"></span></li>
+                        <li class="list-group-item"><strong class="emp">IMDB Rating:</strong> <span data-bind="text: currentMovie.imdbRating"></span></li>
+                        <li class="list-group-item"><strong class="emp">IMDB Votes:</strong> <span data-bind="text: currentMovie.imdbVotes"></span></li>
+                        <li class="list-group-item"><strong class="emp">Language:</strong> <span data-bind="text: currentMovie.Language"></span></li>
+                        <li class="list-group-item"><strong class="emp">Country:</strong> <span data-bind="text: currentMovie.Country"></span></li>
+                        <li class="list-group-item"><strong class="emp">Writer:</strong> <span data-bind="text: currentMovie.Writer"></span></li>
+                        <li class="list-group-item"><strong class="emp">Director:</strong> <span data-bind="text: currentMovie.Director"></span></li>
+                        <li class="list-group-item"><strong class="emp">Actors: </strong><span data-bind="text: currentMovie.Actors"></span></li>
+                        <li class="list-group-item"><strong class="emp">Plot:</strong> <span data-bind="text: currentMovie.Plot"></span></li>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-bind="click: viewMoreInfo" data-dismiss="modal">Close</button>
@@ -111,6 +112,7 @@
 
 
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="bower_components/knockout/dist/knockout.js"></script>
     <script src="bower_components/knockout-mapping/knockout.mapping.js"></script>

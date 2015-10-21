@@ -63,10 +63,11 @@ function MyViewModel() {
             }
         });
     };
+    
     self.clear = function(){
-        $(".results").hide();
         $(".searchForm").val("");
-    }
+        $(".results").fadeOut("fast");
+    };
 };
 
 
